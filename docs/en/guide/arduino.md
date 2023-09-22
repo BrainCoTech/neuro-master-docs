@@ -102,18 +102,14 @@ void setServo(ServoNumber servoNumber, uint8_t angle);
 ## LED
 
 ```cpp
-enum class LedNumber : uint8_t {
-  Led1 = 0,    // LED 1
-  Led2 = 1     // LED 2
-};
 /**
  * Set the color of a specific LED.
- * @param ledNumber The number of the LED (Led1 or Led2).
  * @param r Red component of the color (0 to 255).
  * @param g Green component of the color (0 to 255).
  * @param b Blue component of the color (0 to 255).
+ * @param port The interface code (InterfaceCode enumeration).
  */
-void setLed(LedNumber ledNumber, uint8_t r, uint8_t g, uint8_t b);
+void setLed(uint8_t r, uint8_t g, uint8_t b, InterfaceCode port);
 
 /**
  * Check if the given RGB color is in the red color range.
@@ -241,7 +237,6 @@ enum class IRKeyCode : uint8_t {
   Key8 = 8,     // '8' 键
   Key9 = 9,     // '9' 键
   Key0 = 10,    // '0' 键
-  Power = 11,   // Power 键,
   Plus = 12,    // '+' 键
   Minus = 13,   // '-' 键
   A = 14,       // 'A' 键

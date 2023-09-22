@@ -102,18 +102,13 @@ void setServo(ServoNumber servoNumber, uint8_t angle);
 ## LED
 
 ```cpp
-enum class LedNumber : uint8_t {
-  Led1 = 0,    // LED 1
-  Led2 = 1     // LED 2
-};
 /**
  * 设置特定 LED 的颜色。
- * @param ledNumber LED 的编号（Led1 或 Led2）
  * @param r 颜色的红色分量（0 到 255）
  * @param g 颜色的绿色分量（0 到 255）
  * @param b 颜色的蓝色分量（0 到 255）
  */
-void setLed(LedNumber ledNumber, uint8_t r, uint8_t g, uint8_t b);
+void setLed(uint8_t r, uint8_t g, uint8_t b, InterfaceCode port);
 
 /**
  * 检查给定的 RGB 颜色是否在红色范围内
@@ -230,7 +225,6 @@ enum class IRKeyCode : uint8_t {
   Key8 = 8,     // '8' 键
   Key9 = 9,     // '9' 键
   Key0 = 10,    // '0' 键
-  Power = 11,   // 电源键,
   Plus = 12,    // '+' 键
   Minus = 13,   // '-' 键
   A = 14,       // 'A' 键
