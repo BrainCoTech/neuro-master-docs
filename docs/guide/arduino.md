@@ -84,19 +84,23 @@ enum class MotorNumber : uint8_t {
  * @param motorNumber 马达的编号（马达1、马达2 或 马达1+马达2）
  * @param direction 马达的方向（0 表示前进，1 表示后退）
  * @param speed 马达的速度（0 到 100）
- * @param angle 马达的旋转角度（0 到 100）
+ * @param angle 马达的旋转角度（0 到 360）
  * @param time 马达动作的持续时间（0 到 255）
  */
 void setMotor(MotorNumber motorNumber, uint8_t direction, uint8_t speed, uint8_t angle, uint8_t time);
 
 enum class ServoNumber : uint8_t {
   Servo1 = 0,    // 舵机1
-  Servo2 = 1     // 舵机2
+  Servo2 = 1,    // 舵机2
+  Servo3 = 2,    // 舵机3
+  Servo4 = 3,    // 舵机4
+  Servo5 = 4,    // 舵机5
+  Servo6 = 5     // 舵机6, 扩展舵机
 };
 /**
  * 设置舵机的角度
- * @param servoNumber 舵机的编号（Servo1 或 Servo2）
- * @param angle 舵机的目标角度（0 到 100）
+ * @param servoNumber 舵机的编号（Servo1 到 Servo6）
+ * @param angle 舵机的目标角度（0 到 180）
  */
 void setServo(ServoNumber servoNumber, uint8_t angle);
 ```

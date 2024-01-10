@@ -84,19 +84,23 @@ enum class MotorNumber : uint8_t {
  * @param motorNumber The number of the motor (Motor1, Motor2, or MotorAll).
  * @param direction Motor direction (0 for forward, 1 for backward).
  * @param speed Motor speed (0 to 100).
- * @param angle Motor rotation angle (0 to 100).
+ * @param angle Motor rotation angle (0 to 360).
  * @param time Duration of motor action (0 to 255).
  */
 void setMotor(MotorNumber motorNumber, uint8_t direction, uint8_t speed, uint8_t angle, uint8_t time);
 
 enum class ServoNumber : uint8_t {
   Servo1 = 0,    // Servo 1
-  Servo2 = 1     // Servo 2
+  Servo2 = 1,    // Servo 2
+  Servo3 = 2,    // Servo 3
+  Servo4 = 3,    // Servo 4
+  Servo5 = 4,    // Servo 5
+  Servo6 = 5     // Servo 6, extended servo
 };
 /**
  * Set the angle of a specific servo.
- * @param servoNumber The number of the servo (Servo1 or Servo2).
- * @param angle Desired servo angle (0 to 100).
+ * @param servoNumber The number of the servo (Servo1 to Servo6).
+ * @param angle Desired servo angle (0 to 180).
  */
 void setServo(ServoNumber servoNumber, uint8_t angle);
 ```
