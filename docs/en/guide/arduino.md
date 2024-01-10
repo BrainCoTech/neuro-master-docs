@@ -1,5 +1,7 @@
 # Arduino C
 
+[Arduino IDE Setup](<https://www.brainco-hz.com/docs/NeuroMaster/docs/BrianAI_Arduino-C.docx>)
+
 ## Finger & Gesture
 
 ```cpp

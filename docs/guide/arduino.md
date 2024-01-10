@@ -1,5 +1,7 @@
 # Arduino C
 
+[Arduino IDE 设置](https://www.brainco-hz.com/docs/NeuroMaster/docs/BrianAI_Arduino-C.docx)
+
 ## 手指/手势
 
 ```cpp

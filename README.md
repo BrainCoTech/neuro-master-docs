@@ -1,4 +1,4 @@
-# [NeuroMasterSDK Docs](https://www.brainco-hz.com/docs/neuro-master-docs)
+# [NeuroMasterSDK Docs](https://www.brainco-hz.com/docs/NeuroMaster)
 
 ```shell
 pnpm install
@@ -7,4 +7,5 @@ pnpm docs:dev
 
 pnpm docs:build
 open docs/.vuepress/dist
+./upload.sh
 ```
