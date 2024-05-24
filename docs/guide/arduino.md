@@ -18,7 +18,7 @@ enum class FingerNumber : uint8_t {
  * @param no 手指的编号（大拇指、食指、中指、无名指或小指）
  * @return 手指的当前位置（0 到 100）
  */
-uint8_t nm_get_finger(FingerNumber no);
+uint8_t getFingerValue(FingerNumber no);
 /**
  * 设置手指
  * @param fingerNum 手指的编号（大拇指、食指、中指、无名指或小指）
@@ -170,7 +170,7 @@ enum class InterfaceCode : uint8_t {
  * @param interface 接口编号
  * @return 如果传感器准备就绪则返回 true，否则返回 false。
  */
-bool nm_is_sensor_ready(SensorType sensorType, InterfaceCode interface);
+bool isSensorReady(SensorType sensorType, InterfaceCode interface);
 
 /**
  * 检查特定传感器是否在特定接口中开启。
@@ -179,7 +179,7 @@ bool nm_is_sensor_ready(SensorType sensorType, InterfaceCode interface);
  * @param interface 接口编号
  * @return 如果传感器已开启则返回 true，否则返回 false。
  */
-bool nm_is_sensor_on(SensorType sensorType, InterfaceCode interface);
+bool isSensorOn(SensorType sensorType, InterfaceCode interface);
 
 /**
  * 从特定传感器在特定接口中获取一个16位整数值。
@@ -190,7 +190,7 @@ bool nm_is_sensor_on(SensorType sensorType, InterfaceCode interface);
  *         对于超声波传感器，[0-1000]（0.1 cm）
  *         对于温度传感器，[-200-1000]（0.1℃）
  */
-int16_t nm_get_sensor_int16(SensorType sensorType, InterfaceCode interface);
+int16_t getSensorInt16(SensorType sensorType, InterfaceCode interface);
 
 /**
  * 从颜色传感器在特定接口中获取特定 RGB 分量的值。
@@ -198,14 +198,14 @@ int16_t nm_get_sensor_int16(SensorType sensorType, InterfaceCode interface);
  * @param index RGB 分量的索引（0 表示红色，1 表示绿色，2 表示蓝色）。
  * @return RGB 分量的值（0 到 255）。
  */
-uint8_t nm_get_rgb_value(InterfaceCode interface, uint8_t index);
+uint8_t getRgbValue(InterfaceCode interface, uint8_t index);
 
 /**
  * 从颜色传感器在特定接口编号中获取 RGB 分量值数组。
  * @param interface 接口编号
  * @return 指向 RGB 分量值数组的指针（红色、绿色、蓝色）。
  */
-uint8_t* nm_get_rgb_values(InterfaceCode interface);
+uint8_t* getRgbValues(InterfaceCode interface);
 
 /**
  * 获取特定编号大柔性传感器的值。
@@ -249,7 +249,7 @@ enum class IRKeyCode : uint8_t {
 * 获取当前按下的遥控器按键代码。
 * @return 遥控器按键代码。
  */
-uint8_t nm_get_ir_key();
+uint8_t getIrKey();
 
 /**
 
@@ -257,7 +257,7 @@ uint8_t nm_get_ir_key();
 * @param key 要检查的遥控器按键代码。
 * @return 如果按键被按下则返回 true，否则返回 false。
  */
-bool nm_is_ir_key_pressed(uint8_t key);
+bool isIrKeyPressed(uint8_t key);
 
 ```
 
@@ -284,12 +284,12 @@ void setGPIO(uint8_t gpioNumber, GPIOLevel level);
  * @param no 数字引脚编号 [1-15]
  * @return 如果处于高状态则返回 true，否则返回 false
  */
-bool nm_get_gpio(uint8_t no);
+bool isGpioHigh(uint8_t no);
 
 /**
  * 从特定模拟输入引脚获取模拟值
  * @param no 模拟输入引脚编号 [1-10]
  * @return 从输入引脚读取的模拟值 [0-4095]
  */
-uint16_t nm_get_aio(uint8_t no);
+uint16_t getAioValue(uint8_t no);
 ```

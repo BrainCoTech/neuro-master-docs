@@ -1,7 +1,7 @@
 ---
 home: true
 title: NeuroMaster
-heroImage: /images/hero.webp
+heroImage: /images/hero.jpeg
 heroText: NeuroMaster
 actions:
   - text: 功能概述

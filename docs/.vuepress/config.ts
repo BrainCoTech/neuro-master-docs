@@ -36,12 +36,12 @@ export default defineUserConfig({
     '/': {
       lang: 'zh-CN',
       title: 'NeuroMaster',
-      description: 'BrainAI-人工智能脑科学课程，开发文档',
+      description: 'BrainAI人工智能脑科学课程',
     },
     '/en/': {
       lang: 'en-US',
       title: 'NeuroMaster',
-      description: 'Developer Docs for NeuroMaster BrainAI course',
+      description: 'Developer Docs for BrainAI course',
     },
   },
 
@@ -51,7 +51,7 @@ export default defineUserConfig({
 
   // configure default theme
   theme: defaultTheme({
-    logo: '/images/hero.webp',
+    logo: '/images/hero.jpeg',
     repo: 'BrainCoTech/neuro-master-docs',
     docsDir: 'docs',
     colorMode: 'auto',

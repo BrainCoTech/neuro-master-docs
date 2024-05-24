@@ -7,5 +7,5 @@ pnpm docs:dev
 
 pnpm docs:build
 open docs/.vuepress/dist
-./upload.sh
+pnpm docs:build && ./upload.sh
 ```

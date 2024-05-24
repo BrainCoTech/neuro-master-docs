@@ -18,7 +18,7 @@ enum class FingerNumber : uint8_t {
  * @param no The number of the finger (Thumb, Index, Middle, Ring, or Little).
  * @return The current position of the finger (0 to 100).
  */
-uint8_t nm_get_finger(FingerNumber no);
+uint8_t getFingerValue(FingerNumber no);
 /**
  * Set the position of a specific finger.
  * @param fingerNum The number of the finger (Thumb, Index, Middle, Ring, or Little).
@@ -180,7 +180,7 @@ enum class InterfaceCode : uint8_t {
  * @param interface The interface code (InterfaceCode enumeration).
  * @return True if the sensor is ready, otherwise false.
  */
-bool nm_is_sensor_ready(SensorType sensorType, InterfaceCode interface);
+bool isSensorReady(SensorType sensorType, InterfaceCode interface);
 
 /**
  * Check if a specific sensor is turned on in specific interface.
@@ -189,7 +189,7 @@ bool nm_is_sensor_ready(SensorType sensorType, InterfaceCode interface);
  * @param interface The interface code (InterfaceCode enumeration).
  * @return True if the sensor is turned on, otherwise false.
  */
-bool nm_is_sensor_on(SensorType sensorType, InterfaceCode interface);
+bool isSensorOn(SensorType sensorType, InterfaceCode interface);
 
 /**
  * Get a 16-bit integer value from a specific sensor in specific interface.
@@ -201,7 +201,7 @@ bool nm_is_sensor_on(SensorType sensorType, InterfaceCode interface);
  *         For Temperature: [-200-1000] (0.1℃)
  *         For other sensor types, the actual range depends on the sensor.
  */
-int16_t nm_get_sensor_int16(SensorType sensorType, InterfaceCode interface);
+int16_t getSensorInt16(SensorType sensorType, InterfaceCode interface);
 
 
 /**
@@ -210,14 +210,14 @@ int16_t nm_get_sensor_int16(SensorType sensorType, InterfaceCode interface);
  * @param index The index of the RGB component (0 for Red, 1 for Green, 2 for Blue).
  * @return The RGB component value (0 to 255).
  */
-uint8_t nm_get_rgb_value(InterfaceCode interface, uint8_t index);
+uint8_t getRgbValue(InterfaceCode interface, uint8_t index);
 
 /**
  * Get an array of RGB component values from color sensor in specific interface.
  * @param interface The interface code (InterfaceCode enumeration).
  * @return Pointer to the array of RGB component values (Red, Green, Blue).
  */
-uint8_t* nm_get_rgb_values(InterfaceCode interface);
+uint8_t* getRgbValues(InterfaceCode interface);
 
 /**
  * Get the value of a specific index from the large soft sensor.
@@ -232,28 +232,28 @@ uint8_t getSoftBig(int no);
 
 ```cpp
 enum class IRKeyCode : uint8_t {
-  None = 0,     // 无按键
-  Key1 = 1,     // '1' 键
-  Key2 = 2,     // '2' 键
-  Key3 = 3,     // '3' 键
-  Key4 = 4,     // '4' 键
-  Key5 = 5,     // '5' 键
-  Key6 = 6,     // '6' 键
-  Key7 = 7,     // '7' 键
-  Key8 = 8,     // '8' 键
-  Key9 = 9,     // '9' 键
-  Key0 = 10,    // '0' 键
-  Plus = 12,    // '+' 键
-  Minus = 13,   // '-' 键
-  A = 14,       // 'A' 键
-  B = 15,       // 'B' 键
-  C = 16,       // 'C' 键
-  D = 17,       // 'D' 键
-  E = 18,       // 'E' 键
-  F = 19,       // 'F' 键
-  Func1 = 20,   // FUNC1 键
-  Func2 = 21,   // FUNC2 键
-  Func3 = 22,   // FUNC3 键
+  None = 0,     // None
+  Key1 = 1,     // '1' Key
+  Key2 = 2,     // '2' Key
+  Key3 = 3,     // '3' Key
+  Key4 = 4,     // '4' Key
+  Key5 = 5,     // '5' Key
+  Key6 = 6,     // '6' Key
+  Key7 = 7,     // '7' Key
+  Key8 = 8,     // '8' Key
+  Key9 = 9,     // '9' Key
+  Key0 = 10,    // '0' Key
+  Plus = 12,    // '+' Key
+  Minus = 13,   // '-' Key
+  A = 14,       // 'A' Key
+  B = 15,       // 'B' Key
+  C = 16,       // 'C' Key
+  D = 17,       // 'D' Key
+  E = 18,       // 'E' Key
+  F = 19,       // 'F' Key
+  Func1 = 20,   // FUNC1 Key
+  Func2 = 21,   // FUNC2 Key
+  Func3 = 22,   // FUNC3 Key
 };
 
 /**
@@ -261,7 +261,7 @@ enum class IRKeyCode : uint8_t {
 * Get the currently pressed IR key code.
 * @return The IR key code.
  */
-uint8_t nm_get_ir_key();
+uint8_t getIrKey();
 
 /**
 
@@ -269,7 +269,7 @@ uint8_t nm_get_ir_key();
 * @param key The IR key code to check.
 * @return True if the key is pressed, otherwise false.
  */
-bool nm_is_ir_key_pressed(uint8_t key);
+bool isIrKeyPressed(uint8_t key);
 ```
 
 ## GPIO & AIO
@@ -295,12 +295,12 @@ void setGPIO(uint8_t gpioNumber, GPIOLevel level);
  * @param no The GPIO pin number [1-15].
  * @return True if the GPIO pin is in a high state, false if it's in a low state.
  */
-bool nm_get_gpio(uint8_t no);
+bool isGpioHigh(uint8_t no);
 
 /**
  * Get the analog value from a specific analog input pin.
  * @param no The analog input pin number [1-10].
  * @return The analog value read from the input pin [0-4095].
  */
-uint16_t nm_get_aio(uint8_t no);
+uint16_t getAioValue(uint8_t no);
 ```
